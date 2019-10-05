@@ -13,15 +13,27 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('register', 'UserController@register');
+Route::post('login', 'UserController@authenticate');
 
-Route::group([
-    'prefix' => 'auth',
-], function () {
-    Route::post('login', 'AuthController@login');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
+Route::group(['middleware' => ['auth:api']], function() {
+
+    Route::get('user', 'UserController@getAuthenticatedUser');
+    Route::post('logout', 'UserController@logout');
+
+    /*===============================/Products\=======================================*/
+    Route::post('product', 'ProductsController@store');
+    Route::put('product', 'ProductsController@edit');
+    Route::get('products', 'ProductsController@index');
+
+    /*===============================/Categories\=======================================*/
+    Route::post('category', 'CategoriesController@store');
+    Route::put('category', 'CategoriesController@edit');
+    Route::delete('category', 'CategoriesController@delete');
+    Route::get('categories', 'CategoriesController@index');
+    Route::get('categories/paginate', 'CategoriesController@CategoriesPaginate');
+
+    /*===============================/cash register\=======================================*/
+    Route::post('cash/register', 'CashregistersController@store');
+
 });

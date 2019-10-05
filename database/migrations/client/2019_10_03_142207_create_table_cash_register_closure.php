@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFailedJobsTable extends Migration
+class CreateTableCashRegisterClosure extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateFailedJobsTable extends Migration
      */
     public function up()
     {
-        Schema::connection('main')->create('failed_jobs', function (Blueprint $table) {
+        Schema::connection('client')->create('cash_register_closures', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+            $table->integer('cash_register_id');
+            $table->longText('cash_register_breakdown');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +28,6 @@ class CreateFailedJobsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('failed_jobs');
+        Schema::connection('client')->dropIfExists('cash_register_closures');
     }
 }
