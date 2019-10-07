@@ -25,6 +25,8 @@ Route::group(['middleware' => ['auth:api']], function() {
     Route::post('product', 'ProductsController@store');
     Route::put('product', 'ProductsController@edit');
     Route::get('products', 'ProductsController@index');
+    Route::get('products/paginate', 'ProductsController@ProductsPaginate');
+    Route::delete('product', 'ProductsController@delete');
 
     /*===============================/Categories\=======================================*/
     Route::post('category', 'CategoriesController@store');

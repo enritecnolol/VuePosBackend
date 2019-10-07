@@ -21,7 +21,7 @@ class CreateTableProducts extends Migration
             $table->longText('img');
             $table->integer('existence')->nullable($value = true);
             $table->integer('tax')->nullable($value = true);
-            $table->integer('status');
+            $table->boolean('status')->default(true);
             $table->boolean('itbis');
             $table->integer('categoria_id');
             $table->timestamps();

@@ -20,6 +20,21 @@ class ProductsController extends Controller
     {
 
     }
+    public function ProductsPaginate(Request $request)
+    {
+        try{
+            $res = $this->service->getProductsPaginate($request->size);
+
+            if(!empty($res) && !is_null($res)){
+                return apiSuccess($res);
+            }else{
+                return apiSuccess(null, "No hay data disponible");
+            }
+
+        }catch (\Exception $e){
+            return apiError(null, $e->getMessage(), $e->getCode());
+        }
+    }
     public function store(Request $request)
     {
 
@@ -28,8 +43,6 @@ class ProductsController extends Controller
             'price' => 'required',
             'barcode' => 'required',
             'img' => 'required',
-            'existence' => 'required',
-            'tax' => 'required',
             'category' => 'required'
         ]);
 
@@ -40,7 +53,6 @@ class ProductsController extends Controller
         if(Product::where('barcode', $request->barcode)->first() != null){
             return apiError(null, "Este codigo ya existe", 201);
         }
-
         try{
 
             $this->service->insertProduct($request);
@@ -52,8 +64,37 @@ class ProductsController extends Controller
         }
 
     }
-    public function edit()
+    public function edit(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'id' => 'required'
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->toJson(), 400);
+        }
+
+        try{
+
+            $this->service->editProduct($request);
+            return apiSuccess(null, "El producto editada correctamente");
+
+        }catch (\Exception $e){
+
+            return apiError(null, $e->getMessage(), $e->getCode());
+        }
+    }
+    public function delete(Request $request)
     {
 
+        try{
+
+            $this->service->deleteProduct($request);
+            return apiSuccess(null, "Producto eliminado correctamente");
+
+        }catch (\Exception $e){
+
+            return apiError(null, $e->getMessage(), $e->getCode());
+        }
     }
 }

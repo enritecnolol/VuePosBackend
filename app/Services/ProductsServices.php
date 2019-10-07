@@ -2,20 +2,53 @@
 namespace App\Services;
 
 use App\Product;
+use Illuminate\Support\Facades\DB;
 
 class ProductsServices
 {
     public function insertProduct($data){
 
         $product  = new Product();
-        $product->name = $data['name'];
+        $product->name = strtoupper($data['name']);
         $product->price = $data['price'];
         $product->barcode = $data['barcode'];
         $product->img = $data['img'];
-        $product->existence = $data['existence'];
-        $product->tax = $data['tax'];
-        $product->categoria_id = $data['category'];
+        $product->categoria_id = $data['category']['id'];
         $product->save();
+
+        return $product;
+    }
+
+    public function getProductsPaginate($size)
+    {
+        $products = DB::connection('client')
+            ->table('products')
+            ->select('id', 'img','name', 'price', 'barcode', 'categoria_id')
+            ->where('status', true)
+            ->paginate($size);
+
+        return $products;
+    }
+    public function editProduct($data)
+    {
+        $product = Product::find($data->id);
+        $product->name = strtoupper($data->name);
+        $product->img = $data->img;
+        $product->price = $data->price;
+        $product->barcode = $data->barcode;
+        $product->categoria_id = $data['category']['id'];
+
+        $product->update();
+
+        return $product;
+    }
+
+    public function deleteProduct($data)
+    {
+
+        $product = Product::find($data->id);
+        $product->status = false;
+        $product->update();
 
         return $product;
     }
