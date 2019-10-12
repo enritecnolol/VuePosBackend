@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::group(['middleware' => ['auth:api']], function() {
     Route::post('product', 'ProductsController@store');
     Route::put('product', 'ProductsController@edit');
     Route::get('products', 'ProductsController@index');
+    Route::get('products/search', 'ProductsController@search');
     Route::get('products/paginate', 'ProductsController@ProductsPaginate');
     Route::delete('product', 'ProductsController@delete');
 
@@ -38,4 +40,12 @@ Route::group(['middleware' => ['auth:api']], function() {
     /*===============================/cash register\=======================================*/
     Route::post('cash/register', 'CashregistersController@store');
 
+    /*===============================/migration update\=======================================*/
+    Route::post('update/database', function (){
+        Artisan::call('migrate', [
+            '--database' => 'client',
+            '--force' => true,
+            '--path' => '/database/migrations/client'
+        ]);
+    });
 });

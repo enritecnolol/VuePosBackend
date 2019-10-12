@@ -180,7 +180,14 @@
       <workItem from="1570192534847" duration="2494000" />
       <workItem from="1570199741975" duration="10805000" />
       <workItem from="1570282195925" duration="4964000" />
-      <workItem from="1570451729578" duration="12587000" />
+      <workItem from="1570451729578" duration="14013000" />
+      <workItem from="1570489900502" duration="1414000" />
+      <workItem from="1570536879038" duration="8370000" />
+      <workItem from="1570575817000" duration="1484000" />
+      <workItem from="1570623228811" duration="5258000" />
+      <workItem from="1570709572440" duration="2008000" />
+      <workItem from="1570796425053" duration="11273000" />
+      <workItem from="1570886767253" duration="1169000" />
     </task>
     <servers />
   </component>
@@ -199,5 +206,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/ProductsController.php</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

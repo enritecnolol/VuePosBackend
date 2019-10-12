@@ -19,10 +19,7 @@ class CreateTableProducts extends Migration
             $table->integer('price');
             $table->string('barcode')->unique();
             $table->longText('img');
-            $table->integer('existence')->nullable($value = true);
-            $table->integer('tax')->nullable($value = true);
             $table->boolean('status')->default(true);
-            $table->boolean('itbis');
             $table->integer('categoria_id');
             $table->timestamps();
         });

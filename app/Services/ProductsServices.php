@@ -29,6 +29,32 @@ class ProductsServices
 
         return $products;
     }
+
+    public function getProducts($category)
+    {
+        $products = DB::connection('client')
+            ->table('products')
+            ->select('id', 'img','name', 'price', 'barcode', 'categoria_id')
+            ->where('status', true);
+
+        if($category){
+            $products->where('categoria_id', $category);
+        }
+
+        return $products->get();
+    }
+
+    public function getProductsOrProductSearching($search)
+    {
+
+        $products = DB::connection('client')
+            ->table('products')
+            ->select('id', 'img','name', 'price', 'barcode', 'categoria_id')
+            ->where('barcode', $search)->orWhere('name', 'like', '%' . $search . '%');
+
+
+        return $products->get();
+    }
     public function editProduct($data)
     {
         $product = Product::find($data->id);
