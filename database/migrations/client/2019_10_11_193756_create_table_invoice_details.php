@@ -17,6 +17,7 @@ class CreateTableInvoiceDetails extends Migration
             $table->bigIncrements('id');
             $table->integer('quantity');
             $table->decimal('price', 8, 2);
+            $table->decimal('total', 8, 2);
             $table->integer('product_id');
             $table->integer('invoice_id');
             $table->timestamps();

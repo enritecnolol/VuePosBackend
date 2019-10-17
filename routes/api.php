@@ -40,6 +40,9 @@ Route::group(['middleware' => ['auth:api']], function() {
     /*===============================/cash register\=======================================*/
     Route::post('cash/register', 'CashregistersController@store');
 
+    /*===============================/ Invoice \=======================================*/
+    Route::post('billing', 'InvoicesController@store');
+
     /*===============================/migration update\=======================================*/
     Route::post('update/database', function (){
         Artisan::call('migrate', [

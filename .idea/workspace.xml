@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b46cd03-3306-4b66-a9ef-27720459323e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/ProductsServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductsServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/client/2019_10_03_134732_create_table_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/client/2019_10_03_134732_create_table_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/client/2019_10_11_193756_create_table_invoice_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/client/2019_10_11_193756_create_table_invoice_details.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -187,7 +185,10 @@
       <workItem from="1570623228811" duration="5258000" />
       <workItem from="1570709572440" duration="2008000" />
       <workItem from="1570796425053" duration="11273000" />
-      <workItem from="1570886767253" duration="1169000" />
+      <workItem from="1570886767253" duration="3218000" />
+      <workItem from="1571056414568" duration="7081000" />
+      <workItem from="1571141593010" duration="4189000" />
+      <workItem from="1571228890209" duration="5344000" />
     </task>
     <servers />
   </component>
@@ -206,16 +207,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/ProductsController.php</url>
-          <line>16</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
