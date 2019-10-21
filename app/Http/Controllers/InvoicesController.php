@@ -57,4 +57,29 @@ class InvoicesController extends Controller
             return apiError(null, $e->getMessage(), $e->getCode());
         }
     }
+
+    public function SalesPerMonth(Request $request)
+    {
+        try{
+
+            $res = $this->service->getSalesPerMonth($request['from_date'], $request['to_date']);
+
+            return apiSuccess($res);
+        }catch (\Exception $e)
+        {
+            return apiError(null, $e->getMessage(), $e->getCode());
+        }
+    }
+    public function DailySales(Request $request)
+    {
+        try{
+
+            $res = $this->service->getDailySales($request['from_date'], $request['to_date']);
+
+            return apiSuccess($res);
+        }catch (\Exception $e)
+        {
+            return apiError(null, $e->getMessage(), $e->getCode());
+        }
+    }
 }
