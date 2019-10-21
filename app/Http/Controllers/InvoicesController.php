@@ -45,4 +45,16 @@ class InvoicesController extends Controller
 
 
     }
+    public function summary(Request $request)
+    {
+        try{
+
+            $res = $this->service->getSummary($request['from_date'], $request['to_date']);
+
+            return apiSuccess($res);
+        }catch (\Exception $e)
+        {
+            return apiError(null, $e->getMessage(), $e->getCode());
+        }
+    }
 }

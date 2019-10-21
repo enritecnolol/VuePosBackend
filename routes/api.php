@@ -43,6 +43,9 @@ Route::group(['middleware' => ['auth:api']], function() {
     /*===============================/ Invoice \=======================================*/
     Route::post('billing', 'InvoicesController@store');
 
+    /*===============================/Dashboard\=======================================*/
+    Route::get('dashboard/summary', 'InvoicesController@summary');
+
     /*===============================/migration update\=======================================*/
     Route::post('update/database', function (){
         Artisan::call('migrate', [

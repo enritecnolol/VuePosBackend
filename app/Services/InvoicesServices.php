@@ -3,6 +3,7 @@ namespace App\Services;
 
 use App\Invoice;
 use App\InvoiceDetails;
+use Illuminate\Support\Facades\DB;
 
 class InvoicesServices {
 
@@ -34,6 +35,14 @@ class InvoicesServices {
         }
 
         return $invoice_details;
+    }
+    public function getSummary($from_date, $to_date)
+    {
+        $summary = DB::connection('client')->table('invoices')
+            ->select(DB::raw('count(*) as quantity'), DB::raw('IFNULL(SUM(total), 0)as total'))
+            ->whereBetween(DB::raw('DATE(created_at)'), [$from_date, $to_date]);
+
+        return $summary->first();
     }
 
 }
