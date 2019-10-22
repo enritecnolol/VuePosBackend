@@ -47,6 +47,10 @@ Route::group(['middleware' => ['auth:api']], function() {
     Route::get('dashboard/summary', 'InvoicesController@summary');
     Route::get('dashboard/salesPerMonth', 'InvoicesController@SalesPerMonth');
     Route::get('dashboard/DailySales', 'InvoicesController@DailySales');
+    Route::get('dashboard/SalesByCategory', 'InvoicesController@SalesByCategory');
+    Route::get('dashboard/HourlySales', 'InvoicesController@HourlySales');
+    Route::get('dashboard/SalesByDaysOfTheWeek', 'InvoicesController@SalesByDaysOfTheWeek');
+    Route::get('dashboard/MostSellingProducts', 'InvoicesController@MostSellingProducts');
 
     /*===============================/migration update\=======================================*/
     Route::post('update/database', function (){

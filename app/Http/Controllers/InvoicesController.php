@@ -29,17 +29,17 @@ class InvoicesController extends Controller
             return response()->json($validator->toJson(), 400);
         }
 
-        DB::beginTransaction();
+        DB::connection('client')->beginTransaction();
         try{
 
             $invoice = $this->service->CreateInvoice($request);
             $invoice_details = $this->service->InsertInvoiceDetails($request['products'], $invoice);
 
-            DB::commit();
+            DB::connection('client')->commit();
             return apiSuccess(null, "Factura realizada con exito !!");
         }catch (\Exception $e)
         {
-            DB::rollBack();
+            DB::connection('client')->rollBack();
             return apiError(null, $e->getMessage(), $e->getCode());
         }
 
@@ -75,6 +75,57 @@ class InvoicesController extends Controller
         try{
 
             $res = $this->service->getDailySales($request['from_date'], $request['to_date']);
+
+            return apiSuccess($res);
+        }catch (\Exception $e)
+        {
+            return apiError(null, $e->getMessage(), $e->getCode());
+        }
+    }
+    public function SalesByCategory(Request $request)
+    {
+        try{
+
+            $res = $this->service->getSalesByCategory($request['from_date'], $request['to_date']);
+
+            return apiSuccess($res);
+        }catch (\Exception $e)
+        {
+            return apiError(null, $e->getMessage(), $e->getCode());
+        }
+    }
+
+    public function HourlySales(Request $request)
+    {
+        try{
+
+            $res = $this->service->getHourlySales($request['from_date'], $request['to_date']);
+
+            return apiSuccess($res);
+        }catch (\Exception $e)
+        {
+            return apiError(null, $e->getMessage(), $e->getCode());
+        }
+    }
+
+    public function SalesByDaysOfTheWeek(Request $request)
+    {
+        try{
+
+            $res = $this->service->getSalesByDaysOfTheWeek($request['from_date'], $request['to_date']);
+
+            return apiSuccess($res);
+        }catch (\Exception $e)
+        {
+            return apiError(null, $e->getMessage(), $e->getCode());
+        }
+    }
+
+    public function MostSellingProducts(Request $request)
+    {
+        try{
+
+            $res = $this->service->getMostSellingProducts($request['from_date'], $request['to_date']);
 
             return apiSuccess($res);
         }catch (\Exception $e)
