@@ -50,6 +50,7 @@ class ProductsServices
         $products = DB::connection('client')
             ->table('products')
             ->select('id', 'img','name', 'price', 'barcode', 'categoria_id')
+            ->where('status', true)
             ->where('barcode', $search)->orWhere('name', 'like', '%' . $search . '%');
 
 

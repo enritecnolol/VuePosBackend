@@ -5,8 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/InvoicesServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/InvoicesServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ProductsServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductsServices.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +196,11 @@
       <workItem from="1571500324067" duration="3524000" />
       <workItem from="1571660781182" duration="1542000" />
       <workItem from="1571681219010" duration="9694000" />
-      <workItem from="1571746335361" duration="13647000" />
+      <workItem from="1571746335361" duration="14294000" />
+      <workItem from="1571833549984" duration="1479000" />
+      <workItem from="1571854107102" duration="2239000" />
+      <workItem from="1571940741428" duration="2956000" />
+      <workItem from="1572012455845" duration="3678000" />
     </task>
     <servers />
   </component>

@@ -48,7 +48,7 @@ class InvoicesServices {
     {
         $Sales = DB::connection('client')->table('invoices')
             ->select(DB::raw('MONTH(created_at) as _month'), DB::raw('IFNULL(SUM(total), 0)as total'))
-            ->whereBetween(DB::raw('DATE(created_at)'), [$from_date, $to_date])
+            ->where(DB::raw('YEAR(created_at)'), $from_date)
             ->groupBy(DB::raw('MONTH(created_at)'));
 
         $data = [];

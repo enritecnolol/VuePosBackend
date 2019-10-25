@@ -64,7 +64,12 @@ class InvoicesController extends Controller
 
             $res = $this->service->getSalesPerMonth($request['from_date'], $request['to_date']);
 
-            return apiSuccess($res);
+            if(!empty($res) && !is_null($res))
+            {
+                return apiSuccess($res);
+            }else{
+                return apiSuccess("[]", "No hay data disponible");
+            }
         }catch (\Exception $e)
         {
             return apiError(null, $e->getMessage(), $e->getCode());
@@ -76,7 +81,12 @@ class InvoicesController extends Controller
 
             $res = $this->service->getDailySales($request['from_date'], $request['to_date']);
 
-            return apiSuccess($res);
+            if(!empty($res) && !is_null($res))
+            {
+                return apiSuccess($res);
+            }else{
+                return apiSuccess("[]", "No hay data disponible");
+            }
         }catch (\Exception $e)
         {
             return apiError(null, $e->getMessage(), $e->getCode());
@@ -88,7 +98,12 @@ class InvoicesController extends Controller
 
             $res = $this->service->getSalesByCategory($request['from_date'], $request['to_date']);
 
-            return apiSuccess($res);
+            if(!empty($res) && !is_null($res))
+            {
+                return apiSuccess($res);
+            }else{
+                return apiSuccess("[]", "No hay data disponible");
+            }
         }catch (\Exception $e)
         {
             return apiError(null, $e->getMessage(), $e->getCode());
@@ -101,7 +116,12 @@ class InvoicesController extends Controller
 
             $res = $this->service->getHourlySales($request['from_date'], $request['to_date']);
 
-            return apiSuccess($res);
+            if(!empty($res) && !is_null($res))
+            {
+                return apiSuccess($res);
+            }else{
+                return apiSuccess("[]", "No hay data disponible");
+            }
         }catch (\Exception $e)
         {
             return apiError(null, $e->getMessage(), $e->getCode());
@@ -114,7 +134,12 @@ class InvoicesController extends Controller
 
             $res = $this->service->getSalesByDaysOfTheWeek($request['from_date'], $request['to_date']);
 
-            return apiSuccess($res);
+            if(!empty($res) && !is_null($res))
+            {
+                return apiSuccess($res);
+            }else{
+                return apiSuccess("[]", "No hay data disponible");
+            }
         }catch (\Exception $e)
         {
             return apiError(null, $e->getMessage(), $e->getCode());
@@ -127,7 +152,12 @@ class InvoicesController extends Controller
 
             $res = $this->service->getMostSellingProducts($request['from_date'], $request['to_date']);
 
-            return apiSuccess($res);
+            if(!empty($res) && !is_null($res))
+            {
+                return apiSuccess($res);
+            }else{
+                return apiSuccess("[]", "No hay data disponible");
+            }
         }catch (\Exception $e)
         {
             return apiError(null, $e->getMessage(), $e->getCode());
