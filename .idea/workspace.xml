@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b46cd03-3306-4b66-a9ef-27720459323e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/InvoicesServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/InvoicesServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/ProductsServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductsServices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,16 +130,18 @@
   <component name="ProjectId" id="1Rf6pPYGuUKKgIAV9gPCU5DWpjG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="auth&#9;null&#9;null&#10;Route&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database/migrations/client" />
       <recent name="C:\Users\ENRIQUE\Desktop\Escritorio\LaravelProyects\VuePosBackend\database\migrations\client" />
       <recent name="C:\Users\ENRIQUE\Desktop\Escritorio\LaravelProyects\VuePosBackend\database\migrations" />
     </key>
@@ -201,6 +203,18 @@
       <workItem from="1571854107102" duration="2239000" />
       <workItem from="1571940741428" duration="2956000" />
       <workItem from="1572012455845" duration="3678000" />
+      <workItem from="1572545414150" duration="680000" />
+      <workItem from="1572612595465" duration="3582000" />
+      <workItem from="1572621416469" duration="571000" />
+      <workItem from="1572634738557" duration="797000" />
+      <workItem from="1573483480251" duration="2954000" />
+      <workItem from="1573504757640" duration="1220000" />
+      <workItem from="1573565912719" duration="501000" />
+      <workItem from="1573566472280" duration="2276000" />
+      <workItem from="1573649181807" duration="2409000" />
+      <workItem from="1573668877606" duration="2667000" />
+      <workItem from="1573734869858" duration="268000" />
+      <workItem from="1573759165613" duration="599000" />
     </task>
     <servers />
   </component>

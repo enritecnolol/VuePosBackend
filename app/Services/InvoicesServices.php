@@ -51,31 +51,27 @@ class InvoicesServices {
             ->where(DB::raw('YEAR(created_at)'), $from_date)
             ->groupBy(DB::raw('MONTH(created_at)'));
 
-        $data = [];
+        $obj = [
+            'Ene.' => [0],
+            'Feb.' => [0],
+            'Mar.' => [0],
+            'Abr.' => [0],
+            'May.' => [0],
+            'Jun.' => [0],
+            'Jul.' => [0],
+            'Ago.' => [0],
+            'Sep.' => [0],
+            'Oct.' => [0],
+            'Nov.' => [0],
+            'Dic.' => [0]
+        ];
 
         foreach($Sales->get() as $sale)
         {
-            $obj = [
-                'Ene.' => [0],
-                'Feb.' => [0],
-                'Mar.' => [0],
-                'Abr.' => [0],
-                'May.' => [0],
-                'Jun.' => [0],
-                'Jul.' => [0],
-                'Ago.' => [0],
-                'Sep.' => [0],
-                'Oct.' => [0],
-                'Nov.' => [0],
-                'Dic.' => [0]
-            ];
-
             $obj[getMonthName($sale->_month, true)] = [$sale->total];
-
-            array_push($data, $obj);
         }
 
-        return $data;
+        return $obj;
     }
     public function getDailySales($from_date, $to_date)
     {

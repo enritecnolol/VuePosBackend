@@ -52,6 +52,11 @@ Route::group(['middleware' => ['auth:api']], function() {
     Route::get('dashboard/SalesByDaysOfTheWeek', 'InvoicesController@SalesByDaysOfTheWeek');
     Route::get('dashboard/MostSellingProducts', 'InvoicesController@MostSellingProducts');
 
+    /*===============================/Company\=======================================*/
+    Route::post('company', 'CompaniesController@store');
+    Route::get('company', 'CompaniesController@index');
+    Route::put('company', 'CompaniesController@edit');
+
     /*===============================/migration update\=======================================*/
     Route::post('update/database', function (){
         Artisan::call('migrate', [
