@@ -61,7 +61,7 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:main.users',
             'password' => 'required|string|min:6|confirmed',
             'name_database' => 'required',
             'host' => 'required',
@@ -71,14 +71,14 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json($validator->toJson(), 400);
+            return response()->json($validator->errors(), 400);
         }
 
         $name_database = str_replace(" ", "_", $request['name_database']);
 
         if(UserDatabase::all()->where('name', $name_database)->first()){
             $date =  time();
-            $name_database = "Mypos_".$name_database."_".$date;
+            $name_database = "sofia_".$name_database."_".$date;
         }
 
         $connection = UserDatabase::create([
